@@ -129,15 +129,22 @@
                 if (window.PinUtils) { window.PinUtils.build(); }
             } 
             
-            else if (type === 'yt') {
-                title.innerText = "YouTube Trends";
-                // Cambia 'VIDEO_ID' por el ID de cualquier video o usa una lista
-                container.innerHTML = `
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLuG5V_EonV96O0o6z7O9Y-5W5vE9pW1S6" 
-                    title="YouTube video player" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen></iframe>`;
-            }
+            } else if (type === 'yt') {
+    title.innerText = "YouTube Trends";
+    
+    // Se agregan autoplay=1 y mute=1 para forzar la reproducción automática
+    // Se definen width y height para asegurar que ocupe bien el espacio en tu web
+    container.innerHTML = `
+        <iframe 
+            width="100%" 
+            height="400" 
+            src="https://www.youtube.com/embed/videoseries?list=PLuG5V_EonV96O0o6z7O9Y-5W5vE9pW1S6&autoplay=1&mute=1" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>`;
+}
         }
     </script>
 </body>
